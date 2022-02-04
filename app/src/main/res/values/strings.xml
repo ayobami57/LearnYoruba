@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Learn Yoruba</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="numbers">Numbers</string>
+    <string name="family">Family</string>
+    <string name="phrases">Phrases</string>
+    <string name="color">Colors</string>
+    <string name="food">Food</string>
+    <string name="plants">Plants</string>
+    <string name="bodyparts">Body Parts</string>
+    <string name="about">About Us</string>
+</resources>
