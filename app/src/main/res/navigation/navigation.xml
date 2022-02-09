@@ -9,5 +9,76 @@
         android:id="@+id/titleFragment"
         android:name="com.example.learnyoruba.TitleFragment"
         android:label="fragment_title"
-        tools:layout="@layout/fragment_title" />
+        tools:layout="@layout/fragment_title" >
+        <action
+            android:id="@+id/action_titleFragment_to_numbers"
+            app:destination="@id/numbers"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_titleFragment_to_family"
+            app:destination="@id/family"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_titleFragment_to_phrasesFragment"
+            app:destination="@id/phrases"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_titleFragment_to_colorsFragment"
+            app:destination="@id/Colors"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_titleFragment_to_foodFragment"
+            app:destination="@id/food"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_titleFragment_to_plantsFragment"
+            app:destination="@id/plantsFragment"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false" />
+        <action
+            android:id="@+id/action_titleFragment_to_bodyPartsFragment"
+            app:destination="@id/bodyPartsFragment"
+            app:popUpTo="@id/titleFragment"
+            app:popUpToInclusive="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/numbers"
+        android:name="com.example.learnyoruba.Numbers"
+        android:label="fragment_numbers"
+        tools:layout="@layout/fragment_numbers" />
+    <fragment
+        android:id="@+id/family"
+        android:name="com.example.learnyoruba.FamilyFragment"
+        android:label="fragment_family"
+        tools:layout="@layout/fragment_family" />
+    <fragment
+        android:id="@+id/phrases"
+        android:name="com.example.learnyoruba.PhrasesFragment"
+        android:label="fragment_phrases"
+        tools:layout="@layout/fragment_phrases" />
+    <fragment
+        android:id="@+id/Colors"
+        android:name="com.example.learnyoruba.ColorsFragment"
+        android:label="fragment_colors"
+        tools:layout="@layout/fragment_colors" />
+    <fragment
+        android:id="@+id/food"
+        android:name="com.example.learnyoruba.FoodFragment"
+        android:label="fragment_food"
+        tools:layout="@layout/fragment_food" />
+    <fragment
+        android:id="@+id/plantsFragment"
+        android:name="com.example.learnyoruba.PlantsFragment"
+        android:label="fragment_plants"
+        tools:layout="@layout/fragment_plants" />
+    <fragment
+        android:id="@+id/bodyPartsFragment"
+        android:name="com.example.learnyoruba.BodyPartsFragment"
+        android:label="fragment_body_parts"
+        tools:layout="@layout/fragment_body_parts" />
 </navigation>

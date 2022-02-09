@@ -26,9 +26,10 @@
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/numbersCard"
+                    style="@style/cardStyle"
+                    app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"
-                    app:cardUseCompatPadding="true"
-                    style="@style/cardStyle">
+                    >
 
                     <TextView
                         android:id="@+id/numbersText"
@@ -43,7 +44,9 @@
                     android:id="@+id/familyCard"
                     style="@style/cardStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
 
                     <TextView
                         android:id="@+id/familyText"
@@ -57,7 +60,9 @@
                     android:id="@+id/phrasesCard"
                     style="@style/cardStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
 
                     <TextView
                         android:id="@+id/phrasesText"
@@ -71,7 +76,9 @@
                     android:id="@+id/colorsCard"
                     style="@style/cardStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
 
                     <TextView
                         android:id="@+id/colorText"
@@ -85,7 +92,9 @@
                     android:id="@+id/foodCard"
                     style="@style/cardStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
 
                     <TextView
                         android:id="@+id/foodText"
@@ -99,7 +108,9 @@
                     android:id="@+id/plantsCard"
                     style="@style/cardStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
 
                     <TextView
                         android:id="@+id/plantText"
@@ -113,7 +124,9 @@
                     android:id="@+id/bodypartCard"
                     style="@style/cardStyle"
                     android:layout_width="match_parent"
-                    android:layout_height="60dp">
+                    android:layout_height="60dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp">
 
                     <TextView
                         android:id="@+id/bodypartsText"

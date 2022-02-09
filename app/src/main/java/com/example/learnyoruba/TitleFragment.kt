@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.example.learnyoruba.databinding.FragmentTitleBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -13,15 +14,13 @@ import com.example.learnyoruba.databinding.FragmentTitleBinding
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [TitleFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+
 class TitleFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+    }
 
 
     override fun onCreateView(
@@ -30,28 +29,17 @@ class TitleFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment by using binding root
         val binding: FragmentTitleBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_title, container, false)
+        binding.numbersText.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_numbers))
+        binding.familyText.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_family))
+        binding.phrasesText.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_phrasesFragment))
+        binding.colorText.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_colorsFragment))
+        binding.foodText.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_foodFragment))
+        binding.plantText.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_plantsFragment))
+        binding.bodypartsText.setOnClickListener(Navigation.createNavigateOnClickListener(R.id.action_titleFragment_to_bodyPartsFragment))
         setHasOptionsMenu(true)
         return binding.root
 
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment TitleFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            TitleFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
 }
