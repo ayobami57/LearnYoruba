@@ -14,25 +14,31 @@ import com.example.learnyoruba.databinding.FragmentNumbersBinding
 class Numbers : Fragment() {
 
 
-
+    val numbers = ArrayList<String>()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val binding: FragmentNumbersBinding = DataBindingUtil.inflate(inflater, R.layout.fragment_numbers, container, false)
-        /*val numbers = ArrayList<String>()
         numbers.add("one")
         numbers.add("two")
         numbers.add("three")
-        val arrayAdapter = ArrayAdapter(activity!!, android.R.layout.simple_list_item_1, numbers)
-        binding.numberList.adapter = arrayAdapter*/
+        numbers.add("four")
+        numbers.add("five")
+        numbers.add("six")
+        numbers.add("seven")
+        numbers.add("eight")
+        numbers.add("nine")
+        binding.numberList.adapter = activity?.let {ArrayAdapter<String>(it, android.R.layout.simple_list_item_1, numbers)}
+
 
 
 
 
         // Inflate the layout for this fragment
         return binding.root
+
 
 
     }
