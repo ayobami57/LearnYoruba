@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.example.learnyoruba.MyAdapter
 import com.example.learnyoruba.R
 import com.example.learnyoruba.databinding.FragmentFoodBinding
@@ -15,7 +16,7 @@ import com.example.learnyoruba.user
 
 class FoodFragment : Fragment() {
 
- val food = ArrayList<user>()
+    private lateinit var viewModel: FoodViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,16 +25,11 @@ class FoodFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding: FragmentFoodBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_food, container, false)
-        food.add(user("BreakFast", "Ounje aaro"))
-        food.add(user("Lunch", "Ounje osan"))
-        food.add(user("Dinner", "Ounje ale"))
-        food.add(user("Milk", "Wara"))
-        food.add(user("Coffee", "Kofi"))
-        food.add(user("Bread", "Buredi"))
-        food.add(user("Yam", "Isu"))
-        food.add(user("Beans","Ewa"))
 
-        binding.foodList.adapter = activity?.let{ MyAdapter(it, food) }
+
+        viewModel = ViewModelProvider(this).get(FoodViewModel::class.java)
+
+        binding.foodList.adapter = activity?.let{ MyAdapter(it, viewModel.food) }
         return binding.root
     }
 

@@ -6,7 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.example.learnyoruba.MyAdapter
+import com.example.learnyoruba.Phrases.PhrasesViewModel
 import com.example.learnyoruba.R
 import com.example.learnyoruba.databinding.FragmentPlantsBinding
 import com.example.learnyoruba.user
@@ -14,7 +16,8 @@ import com.example.learnyoruba.user
 
 class PlantsFragment : Fragment() {
 
-val plants = ArrayList<user>()
+
+    private lateinit var viewModel : PlantsViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -24,17 +27,11 @@ val plants = ArrayList<user>()
         val binding: FragmentPlantsBinding = DataBindingUtil.inflate(inflater,
             R.layout.fragment_plants, container, false)
 
-        plants.add(user("Dandelion Lettuce", "Efo-yanrin"))
-        plants.add(user("Bitter leaf", "Eworo"))
-        plants.add(user("African Spinach", "Efo-tete"))
-        plants.add(user("Lagos Spinach", "Shokoyokoto"))
-        plants.add(user("Water leaf", "Gbure"))
-        plants.add(user("Malabar Spinach", "Amunututu"))
-        plants.add(user("Pumpkin leaf", "Ugu"))
-        plants.add(user("Jute leaf", "Ewedu"))
-        plants.add(user("Moringa leaf", "Ewe ile"))
 
-        binding.plantsList.adapter = activity?.let{ MyAdapter(it, plants) }
+
+        viewModel = ViewModelProvider(this).get(PlantsViewModel::class.java)
+
+        binding.plantsList.adapter = activity?.let{ MyAdapter(it, viewModel.plants) }
         return binding.root
     }
 
